@@ -37,7 +37,19 @@ const closeModal = document.querySelector('.lightbox__button');
 closeModal.addEventListener("click", closerModal);
 function closerModal (){
   modal.classList.remove('is-open');
-  largeImageclose.src = '';
-  largeImageclose.alt = '';
+  largeImageclose.src = "";
+  largeImageclose.alt = "";
   }
 
+const closeModalClick = document.querySelector('.lightbox__overlay');
+closeModalClick.addEventListener("click", closerModalClick);
+function closerModalClick() {
+  modal.classList.remove('is-open');
+}
+
+window.addEventListener("keydown", keyPress);
+function keyPress (event) {
+    if(event.key === "Escape") {
+        modal.classList.remove('is-open');
+    }
+}
