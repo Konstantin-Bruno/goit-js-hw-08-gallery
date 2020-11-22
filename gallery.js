@@ -17,7 +17,6 @@ imagesRef.append(...listImg);
 
 const openModal = document.querySelector('.js-gallery');
 const modal = document.querySelector('.js-lightbox');
-
 openModal.addEventListener("click", openerModal); 
 function openerModal(event) {
   event.preventDefault();
@@ -30,12 +29,15 @@ function openerModal(event) {
   const largeImage = document.querySelector('.lightbox__image');
   largeImage.src = largeImageUrl;
   largeImage.alt = largeImageAlt;
-  }
+}
+  
+const largeImageclose = document.querySelector('.lightbox__image');
 
 const closeModal = document.querySelector('.lightbox__button');
 closeModal.addEventListener("click", closerModal);
 function closerModal (){
   modal.classList.remove('is-open');
-  // bind.largeImage.src = '';
-}
+  largeImageclose.src = '';
+  largeImageclose.alt = '';
+  }
 
